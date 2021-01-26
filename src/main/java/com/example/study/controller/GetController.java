@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class GetController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/getMethod") // localhost:8080/api/getMethod 매핑
-    public String getRequset(){
+    public String getRequest(){
         return "Hi getMethod";
     }
 
