@@ -1,5 +1,8 @@
 package com.example.study.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 /**
  * @author Gatsjy
  * @since 2021-01-22
@@ -7,33 +10,13 @@ package com.example.study.model;
  * Blog : https://blog.naver.com/gkswndks123
  * Github : https://github.com/gatsjy
  */
+
+@Data // 자동적으로 기본생성자와 getsetmethod를 만들어준다.
+@AllArgsConstructor
 public class SearchParam {
 
     private String account;
     private String email;
     private int page;
-
-    public String getAccount() {
-        return account;
-    }
-
-    public void setAccount(String account) {
-        this.account = account;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getPage() {
-        return page;
-    }
-
-    public void setPage(int page) {
-        this.page = page;
-    }
 }
+
