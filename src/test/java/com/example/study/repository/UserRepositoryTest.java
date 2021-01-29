@@ -4,8 +4,11 @@ import com.example.study.StudyApplicationTests;
 import com.example.study.model.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -36,11 +39,28 @@ public class UserRepositoryTest extends StudyApplicationTests {
         System.out.println(newUser);
     }
 
+    // CRUD의 R부분입니다.
+    @Test
     public void read(){
+        Optional<User> user = userRepository.findById(2L);
 
+        user.ifPresent(selectUser ->{
+            System.out.println("user : "+ selectUser);
+            System.out.println("email : " +selectUser.getEmail());
+        });
     }
 
+    @Test
     public void update(){
 
+        // update userset account
+        Optional<User> user = userRepository.findById(2L);
+        user.ifPresent(selectUser ->{
+            selectUser.setAccount("PPPPP");
+            selectUser.setUpdatedAt(LocalDateTime.now());
+            selectUser.setUpdatedBy("update method()");
+
+            userRepository.save(selectUser);
+        });
     }
 }
