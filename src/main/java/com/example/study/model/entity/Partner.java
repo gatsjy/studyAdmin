@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -18,25 +18,34 @@ import java.time.LocalDateTime;
  * Blog : https://blog.naver.com/gkswndks123
  * Github : https://github.com/gatsjy
  */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity // order_detail
-public class OrderDetail {
+@Entity
+public class Partner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     private String status;
 
-    private LocalDateTime orderAt;
+    private String address;
 
-    private LocalDateTime arrivalDate;
+    private String callCenter;
 
-    private Integer quantity;
+    private String partnerNumber;
 
-    private BigDecimal totalPrice;
+    private String businessNumber;
+
+    private String ceoName;
+
+    private LocalDateTime registeredAt;
+
+    private LocalDateTime unregisteredAt;
 
     private LocalDateTime createdAt;
 
