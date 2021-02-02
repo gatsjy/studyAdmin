@@ -28,7 +28,7 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String statue;
+    private String status;
 
     private String name;
 
@@ -51,4 +51,6 @@ public class Item {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    private Long partnerId;
 }
